@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import PageWrapper from '~/components/PageWrapper';
-import style from '../styles/pages/index.scss';
+import style from '../styles/pages/dashboard.scss';
 import MainLayout from '../layouts/main';
 
 class IndexPage extends React.Component {

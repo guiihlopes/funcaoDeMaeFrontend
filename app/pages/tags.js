@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import PageWrapper from '~/components/PageWrapper';
 import CardBox from '~/components/CardBox';
-import style from '../styles/pages/index.scss';
+import style from '../styles/pages/dashboard.scss';
 import MainLayout from '../layouts/main';
 
 class DashboardPage extends React.Component {

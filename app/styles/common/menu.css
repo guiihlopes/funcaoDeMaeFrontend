@@ -198,7 +198,7 @@ File: Menu
 }
 .content-page {
   margin-left: 250px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .content-page .content {
   padding: 0px 5px;
