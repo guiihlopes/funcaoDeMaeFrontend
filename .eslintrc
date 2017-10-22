@@ -1,0 +1,47 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "allowImportEverywhere": true
+  },
+  "globals": {
+    "React": true,
+    "window": true,
+    "fetch": true,
+    "BACKEND_URL": true,
+    "FormData": true,
+    "FileReader": true,
+    "NODE_ENV": true,
+    "document": true
+  },
+  "rules": {
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/label-has-for": "off",
+    "react/jsx-filename-extension": "off",
+    "react/forbid-prop-types": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "tabWidth": 4,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true
+      }
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "__NEXT_DATA__",
+          "_error"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-root-import": {}
+    }
+  }
+}

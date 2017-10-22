@@ -1,0 +1,53 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    [
+      "transform-define",
+      "./env-config.js",
+      "syntax-dynamic-import",
+      "dynamic-import-webpack"
+    ],
+    [
+      "module-resolver",
+      {
+        "root": [
+          "app"
+        ],
+        "alias": {
+          "styles": "app/styles"
+        },
+        "cwd": "babelrc"
+      }
+    ],
+    [
+      "wrap-in-js",
+      {
+        "extensions": [
+          "css$",
+          "scss$"
+        ]
+      }
+    ],
+    [
+      "babel-plugin-root-import",
+      {
+        "rootPathSuffix": "app"
+      }
+    ]
+  ],
+  "env": {
+    "production": {},
+    "test": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": "commonjs"
+          }
+        ]
+      ]
+    }
+  }
+}
