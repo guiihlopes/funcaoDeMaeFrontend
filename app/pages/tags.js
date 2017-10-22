@@ -8,11 +8,6 @@ class DashboardPage extends React.Component {
   static async getInitialProps(context) {
     const { store } = context;
     console.log(store);
-    // if (store.getState().curriculum.name === '') {
-    //   const curriculums = await fetch(`${BACKEND_URL}/curriculos/1`);
-    //   const json = await curriculums.json();
-    //   store.dispatch(actionCurriculum.curriculumFetched(json));
-    // }
   }
   render() {
     return (
