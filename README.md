@@ -11,15 +11,16 @@
 Equipe Função de Mãe
 
 ## Stack
-Essa é uma aplicação JavaScript feita completamente em cima da biblioteca [react](https://facebook.github.io/react/) e o framework [nextjs](https://github.com/zeit/next.js), que utilizamos para renderizar os componentes react no back-end (tecnica também conhecida como universal rendering/server-side-rendering).
+Essa é uma aplicação JavaScript feita completamente em cima da biblioteca [react](https://facebook.github.io/react/) e o framework [nextjs](https://github.com/zeit/next.js), que utilizamos para renderizar os componentes react no back-end (tecnica também conhecida como universal rendering/server side rendering).
 As principais tecnologias utilizadas são:
 
 - [react](https://facebook.github.io/react/)
 - [nextjs](https://github.com/zeit/next.js)
-- [webpack](https://webpack.github.io/)
-- [babel](https://babeljs.io/) (ECMAScript 6)
+- [express](http://expressjs.com/)
 - [sass](http://sass-lang.com/)
 - [react-intl-universal](https://github.com/alibaba/react-intl-universal/)
+- [webpack](https://webpack.github.io/)
+- [babel](https://babeljs.io/) (ECMAScript 6)
 
 ## Rodando a aplicação
 Para rodar o projeto, instale as seguintes dependências na sua maquina:
