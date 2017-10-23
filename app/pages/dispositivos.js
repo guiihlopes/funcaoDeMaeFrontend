@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import Router from 'next/router';
+import { BootstrapTable, TableHeaderColumn, InsertButton } from 'react-bootstrap-table';
 import PageWrapper from '~/components/PageWrapper';
 import style from '../styles/pages/dispositivos.scss';
 import MainLayout from '../layouts/main';
@@ -9,6 +10,21 @@ class DashboardPage extends React.Component {
     const { store } = context;
     console.log(store);
   }
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  // eslint-disable-next-line
+  handleClick() {
+    Router.push('/dispositivos/cadastrar');
+  }
+  createCustomInsertButton = () => (
+    <InsertButton
+      btnText="Adicionar"
+      btnContextual="btn-success"
+      onClick={this.handleClick}
+    />
+  )
   render() {
     let dispositivos = new Array(100).fill(1);
     dispositivos = dispositivos.map((obj, index) => ({
@@ -22,6 +38,11 @@ class DashboardPage extends React.Component {
       clickToSelect: true,
       bgColor: 'rgb(238, 193, 213)',
     };
+    const options = {
+      insertBtn: this.createCustomInsertButton,
+      noDataText: 'Sem dispositivos cadastrados',
+    };
+
     return (
       <MainLayout style={style} title="Dispositivos">
         <Head>
@@ -40,7 +61,7 @@ class DashboardPage extends React.Component {
               insertRow
               deleteRow
               search
-              options={{ noDataText: 'Sem dispositivos cadastrados' }}
+              options={options}
             >
               <TableHeaderColumn dataField="id" isKey>ID</TableHeaderColumn>
               <TableHeaderColumn dataField="name">Nome</TableHeaderColumn>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 
 // eslint-disable-next-line
 class UserBoxMenu extends React.Component {
@@ -5,14 +6,18 @@ class UserBoxMenu extends React.Component {
     return (
       <ul className="list-inline">
         <li>
-          <a href="#">
-            <i className="zmdi zmdi-settings" />
-          </a>
+          <Link prefetch href="/usuario/editar">
+            <a>
+              <i className="zmdi zmdi-settings" />
+            </a>
+          </Link>
         </li>
         <li>
-          <a href="#" className="text-custom">
-            <i className="zmdi zmdi-power" />
-          </a>
+          <Link prefetch href="/usuario/editar">
+            <a href="#" className="text-custom">
+              <i className="zmdi zmdi-power" />
+            </a>
+          </Link>
         </li>
       </ul>
     );

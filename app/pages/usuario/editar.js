@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import PageWrapper from '~/components/PageWrapper';
-import CardBox from '~/components/CardBox';
-import style from '../styles/pages/dashboard.scss';
-import MainLayout from '../layouts/main';
+import style from '~/styles/pages/dispositivos.scss';
+import MainLayout from '~/layouts/main';
 
 class DashboardPage extends React.Component {
   static async getInitialProps(context) {
@@ -11,13 +10,13 @@ class DashboardPage extends React.Component {
   }
   render() {
     return (
-      <MainLayout style={style} title="Dashboard">
+      <MainLayout style={style} title="Configurações do usuário">
         <Head>
-          <meta name="description" content="Dashboard" />
+          <meta name="description" content="Dispositivos" />
         </Head>
         <div className="row">
-          <div className="col-lg-3 col-md-6">
-            <CardBox />
+          <div className="col-md-12">
+            <h2>Atualizar informações</h2>
           </div>
         </div>
       </MainLayout>
