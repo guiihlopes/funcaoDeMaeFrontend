@@ -2,6 +2,15 @@ import Link from 'next/link';
 
 // eslint-disable-next-line
 class UserBoxMenu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+  handleLogout(ev) {
+    ev.preventDefault();
+    this.test = 1;
+    console.log(ev);
+  }
   render() {
     return (
       <ul className="list-inline">
@@ -13,11 +22,9 @@ class UserBoxMenu extends React.Component {
           </Link>
         </li>
         <li>
-          <Link prefetch href="/usuario/editar">
-            <a href="#" className="text-custom">
-              <i className="zmdi zmdi-power" />
-            </a>
-          </Link>
+          <a href="#" className="text-custom" onClick={this.handleLogout}>
+            <i className="zmdi zmdi-power" />
+          </a>
         </li>
       </ul>
     );

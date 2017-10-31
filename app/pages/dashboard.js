@@ -19,6 +19,39 @@ class DashboardPage extends React.Component {
           <div className="col-lg-3 col-md-6">
             <CardBox />
           </div>
+          <div className="col-lg-3 col-md-6">
+            <CardBox />
+          </div>
+          <div className="col-lg-3 col-md-6">
+            <CardBox />
+          </div>
+          <div className="col-lg-3 col-md-6">
+            <CardBox />
+          </div>
+          <div className="col-lg-3 col-md-6">
+            <CardBox />
+          </div>
+          <div className="col-lg-3 col-md-6">
+            <CardBox />
+          </div>
+          <div className="col-lg-3 col-md-6">
+            <CardBox />
+          </div>
+          <div className="col-lg-3 col-md-6">
+            <CardBox />
+          </div>
+          <div className="col-lg-3 col-md-6">
+            <CardBox />
+          </div>
+          <div className="col-lg-3 col-md-6">
+            <CardBox />
+          </div>
+          <div className="col-lg-3 col-md-6">
+            <CardBox />
+          </div>
+          <div className="col-lg-3 col-md-6">
+            <CardBox />
+          </div>
         </div>
       </MainLayout>
     );

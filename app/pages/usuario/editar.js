@@ -14,9 +14,10 @@ class DashboardPage extends React.Component {
         <Head>
           <meta name="description" content="Dispositivos" />
         </Head>
+        <h2>Atualizar informações</h2>
         <div className="row">
           <div className="col-md-12">
-            <h2>Atualizar informações</h2>
+            Formulario
           </div>
         </div>
       </MainLayout>

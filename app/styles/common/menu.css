@@ -9,7 +9,7 @@ File: Menu
   position: fixed;
   right: 0;
   top: 0px;
-  z-index: 999;
+  z-index: 101;
 }
 .topbar .topbar-left {
   background: #ffffff;

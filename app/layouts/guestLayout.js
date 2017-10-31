@@ -1,10 +1,7 @@
 import Head from 'next/head';
 import propTypes from 'prop-types';
-import Footer from '~/components/Footer/Footer';
-import LeftSidebarMenu from '~/components/LeftSidebar';
-import TopBar from '~/components/TopBar';
 
-const Layout = ({ children, title = 'Início', style }) => (
+const guestLayout = ({ children, title = 'Início', style }) => (
   <div>
     <Head>
       <title>{title} | Função de mãe</title>
@@ -14,30 +11,27 @@ const Layout = ({ children, title = 'Início', style }) => (
       <style dangerouslySetInnerHTML={{ __html: style }} />
     </Head>
     <div id="wrapper">
-      <TopBar title={title} />
-      <LeftSidebarMenu />
       <div className="content-page">
         <div className="content">
           <div className="container">
             {children}
           </div>
-          <Footer />
         </div>
       </div>
     </div>
   </div>
 );
 
-Layout.propTypes = {
+guestLayout.propTypes = {
   children: propTypes.node,
   title: propTypes.string,
   style: propTypes.string,
 };
 
-Layout.defaultProps = {
+guestLayout.defaultProps = {
   children: <div />,
   title: '',
   style: {},
 };
 
-export default Layout;
+export default guestLayout;

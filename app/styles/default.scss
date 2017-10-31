@@ -6,3 +6,27 @@
 @import 'common/menu';
 @import 'common/responsive';
 @import 'shared/ngprogress';
+
+
+.table-striped > tbody > tr:nth-of-type(odd).delete-row,
+.table-hover > tbody > tr:hover.delete-row{
+  background: rgb(238, 193, 213) !important;
+}
+
+.close:focus, .close:hover {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+.modal-header{
+  border-bottom: 1px solid rgba(152, 166, 173, 0.2);
+}
+.modal-content{
+  background: #2f3e47;
+}
+.modal-footer{
+  border-top: 1px solid rgba(152, 166, 173, 0.2);
+}

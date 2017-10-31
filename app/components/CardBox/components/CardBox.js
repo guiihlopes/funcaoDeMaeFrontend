@@ -18,7 +18,7 @@ class CardBox extends React.Component {
       this.setState({
         percent, data: this.getData(percent),
       });
-    }, 2000);
+    }, 1000);
   }
   componentWillUnmount() {
     window.clearInterval(this.setStateInterval);

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Router from 'next/router';
 import { BootstrapTable, TableHeaderColumn, InsertButton } from 'react-bootstrap-table';
 import PageWrapper from '~/components/PageWrapper';
 import style from '../styles/pages/dispositivos.scss';
@@ -10,19 +9,15 @@ class DashboardPage extends React.Component {
     const { store } = context;
     console.log(store);
   }
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
   // eslint-disable-next-line
-  handleClick() {
-    Router.push('/dispositivos/cadastrar');
+  handleClick(onClick) {
+    onClick();
   }
-  createCustomInsertButton = () => (
+  createCustomInsertButton = onClick => (
     <InsertButton
       btnText="Adicionar"
       btnContextual="btn-success"
-      onClick={this.handleClick}
+      onClick={() => this.handleClick(onClick)}
     />
   )
   render() {
@@ -36,6 +31,7 @@ class DashboardPage extends React.Component {
     const selectRowProp = {
       mode: 'checkbox',
       clickToSelect: true,
+      className: 'delete-row',
       bgColor: 'rgb(238, 193, 213)',
     };
     const options = {
