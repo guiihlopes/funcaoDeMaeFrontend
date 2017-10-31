@@ -1,5 +1,5 @@
 import propTypes from 'prop-types';
-import updateCurriculum from '~/helpers/updateCurriculum';
+import actionHandler from '~/helpers/actionHandler';
 import UsuarioForm from './FormStructure';
 
 class Form extends React.Component {
@@ -12,7 +12,7 @@ class Form extends React.Component {
     const submitValues = values.usuario;
     const { updateUsuario } = this.props;
 
-    return updateCurriculum({
+    return actionHandler({
       action: updateUsuario,
       values: submitValues,
       block: 'usuario',
