@@ -1,15 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import PageWrapper from '~/components/PageWrapper';
-import Form from '~/components/Usuario/LoginForm';
+import Form from '~/components/Usuario/UpdateForm';
 import Logo from '~/components/@ui/Logo';
-import style from '../styles/pages/login.scss';
-import LoginLayout from '../layouts/formLayout';
+import style from '../styles/pages/register.scss';
+import RegisterLayout from '../layouts/formLayout';
 
-const LoginPage = () => (
-  <LoginLayout style={style} title="Login">
+const RegisterPage = () => (
+  <RegisterLayout style={style} title="Cadastro">
     <Head>
-      <meta name="description" content="Login" />
+      <meta name="description" content="Cadastro" />
     </Head>
     <div>
       <div className="text-center">
@@ -20,7 +20,7 @@ const LoginPage = () => (
       </div>
       <div className="m-t-40 card-box">
         <div className="text-center">
-          <h4 className="text-uppercase font-bold m-b-0">Login</h4>
+          <h4 className="text-uppercase font-bold m-b-0">Cadastro</h4>
         </div>
         <div className="panel-body">
           <Form />
@@ -28,15 +28,15 @@ const LoginPage = () => (
       </div>
       <div className="row">
         <div className="col-sm-12 text-center">
-          <p className="text-muted">Não tem uma conta?
-            <Link href="/register">
-              <a className="text-primary m-l-5"><b>Registre</b></a>
+          <p className="text-muted">Já tem uma conta?
+            <Link href="/login">
+              <a className="text-primary m-l-5"><b>Entre</b></a>
             </Link>
           </p>
         </div>
       </div>
     </div>
-  </LoginLayout>
+  </RegisterLayout>
 );
 
-export default PageWrapper(LoginPage);
+export default PageWrapper(RegisterPage);

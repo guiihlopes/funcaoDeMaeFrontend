@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { BootstrapTable, TableHeaderColumn, InsertButton } from 'react-bootstrap-table';
+import { BootstrapTable, TableHeaderColumn, InsertButton, InsertModalHeader } from 'react-bootstrap-table';
 import PageWrapper from '~/components/PageWrapper';
 import style from '../styles/pages/dispositivos.scss';
 import MainLayout from '../layouts/main';
@@ -9,17 +9,30 @@ class DashboardPage extends React.Component {
     const { store } = context;
     console.log(store);
   }
-  // eslint-disable-next-line
-  handleClick(onClick) {
+
+  static handleClick(onClick) {
     onClick();
   }
+
+  static handleModalClose(closeModal) {
+    closeModal();
+  }
+
+  createCustomModalHeader = closeModal => (
+    <InsertModalHeader
+      title="Cadastrar dispositivos"
+      onModalClose={() => DashboardPage.handleModalClose(closeModal)}
+    />
+  );
+
   createCustomInsertButton = onClick => (
     <InsertButton
       btnText="Adicionar"
       btnContextual="btn-success"
-      onClick={() => this.handleClick(onClick)}
+      onClick={() => DashboardPage.handleClick(onClick)}
     />
-  )
+  );
+
   render() {
     let dispositivos = new Array(100).fill(1);
     dispositivos = dispositivos.map((obj, index) => ({
@@ -34,9 +47,11 @@ class DashboardPage extends React.Component {
       className: 'delete-row',
       bgColor: 'rgb(238, 193, 213)',
     };
+
     const options = {
       insertBtn: this.createCustomInsertButton,
       noDataText: 'Sem dispositivos cadastrados',
+      insertModalHeader: this.createCustomModalHeader,
     };
 
     return (
@@ -59,7 +74,7 @@ class DashboardPage extends React.Component {
               search
               options={options}
             >
-              <TableHeaderColumn dataField="id" isKey>ID</TableHeaderColumn>
+              <TableHeaderColumn hiddenOnInsert autoValue dataField="id" isKey>ID</TableHeaderColumn>
               <TableHeaderColumn dataField="name">Nome</TableHeaderColumn>
               <TableHeaderColumn dataField="potencia">Potência</TableHeaderColumn>
             </BootstrapTable>

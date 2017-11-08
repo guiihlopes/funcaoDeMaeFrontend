@@ -33,13 +33,11 @@ class DashboardPage extends React.Component {
     console.log(store);
   }
 
-  // eslint-disable-next-line
-  handleModalClose(closeModal) {
+  static handleModalClose(closeModal) {
     closeModal();
   }
 
-  // eslint-disable-next-line
-  handleClick(onClick) {
+  static handleClick(onClick) {
     onClick();
   }
 
@@ -47,14 +45,14 @@ class DashboardPage extends React.Component {
     <InsertButton
       btnText="Adicionar"
       btnContextual="btn-success"
-      onClick={() => this.handleClick(onClick)}
+      onClick={() => DashboardPage.handleClick(onClick)}
     />
   );
 
   createCustomModalHeader = closeModal => (
     <InsertModalHeader
       title="Cadastrar tags"
-      onModalClose={() => this.handleModalClose(closeModal)}
+      onModalClose={() => DashboardPage.handleModalClose(closeModal)}
     />
   );
 
