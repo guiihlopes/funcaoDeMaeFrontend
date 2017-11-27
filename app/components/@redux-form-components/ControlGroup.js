@@ -17,7 +17,9 @@ const Field = ({ input,
           (touched && error &&
             <ul className="parsley-errors-list filled">
               <li className="parsley-required">
-                {intl.get(`form.validation.${error}`, { label: label.toLowerCase() })}
+                {intl.get(`form.validation.${error}`, {
+                  label: label ? label.toLowerCase() : placeholder.toLowerCase(),
+                })}
               </li>
             </ul>
           )
@@ -28,7 +30,7 @@ const Field = ({ input,
 
 Field.propTypes = {
   input: propTypes.object.isRequired,
-  type: propTypes.string.isRequired,
+  type: propTypes.string,
   meta: propTypes.object.isRequired,
   label: propTypes.string,
   placeholder: propTypes.string,
@@ -37,6 +39,7 @@ Field.propTypes = {
 
 Field.defaultProps = {
   label: '',
+  type: 'text',
   placeholder: '',
   fieldId: '',
   children: '',

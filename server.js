@@ -30,10 +30,54 @@ const getLocalesAndMessages = (req, res) => {
   req.messages = getMessages(locale);
 };
 
+const isLoggedIn = (req) => {
+  const funcaoDeMaeToken = req.cookies.funcao_de_mae_token;
+
+  return funcaoDeMaeToken !== undefined && funcaoDeMaeToken !== '';
+};
+
 app.prepare().then(() => {
   const server = express();
 
   server.use(Cookies());
+
+  server.get('/login', (req, res) => {
+    getLocalesAndMessages(req, res);
+    return isLoggedIn(req) ? res.redirect('/') :
+      app.render(req, res, '/login', req.query);
+  });
+
+  server.get('/register', (req, res) => {
+    getLocalesAndMessages(req, res);
+    return isLoggedIn(req) ? res.redirect('/') :
+      app.render(req, res, '/register', req.query);
+  });
+
+  server.get('/', (req, res) => {
+    getLocalesAndMessages(req, res);
+    return !isLoggedIn(req) ? res.redirect('/login') :
+      app.render(req, res, '/dashboard', req.query);
+  });
+  server.get('/dashboard', (req, res) => {
+    getLocalesAndMessages(req, res);
+    return !isLoggedIn(req) ? res.redirect('/login') :
+      app.render(req, res, '/dashboard', req.query);
+  });
+  server.get('/dispositivos', (req, res) => {
+    getLocalesAndMessages(req, res);
+    return !isLoggedIn(req) ? res.redirect('/login') :
+      app.render(req, res, '/dispositivos', req.query);
+  });
+  server.get('/tags', (req, res) => {
+    getLocalesAndMessages(req, res);
+    return !isLoggedIn(req) ? res.redirect('/login') :
+      app.render(req, res, '/tags', req.query);
+  });
+  server.get('/usuario/editar', (req, res) => {
+    getLocalesAndMessages(req, res);
+    return !isLoggedIn(req) ? res.redirect('/login') :
+      app.render(req, res, '/usuario/editar', req.query);
+  });
 
   server.get('/*', (req, res, next) => {
     getLocalesAndMessages(req, res);

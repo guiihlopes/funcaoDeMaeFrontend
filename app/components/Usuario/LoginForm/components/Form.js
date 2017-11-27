@@ -1,5 +1,4 @@
-import propTypes from 'prop-types';
-import actionHandler from '~/helpers/actionHandler';
+import { request } from '~/helpers/fetch';
 import LoginForm from './FormStructure';
 
 class Form extends React.Component {
@@ -8,15 +7,21 @@ class Form extends React.Component {
     this.submit = this.submit.bind(this);
   }
 
+  // eslint-disable-next-line
   submit(values) {
     const submitValues = values.usuario;
-    const { updateUsuario } = this.props;
 
-    return actionHandler({
-      action: updateUsuario,
-      values: submitValues,
-      block: 'usuario',
-    });
+    request('site/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        ...submitValues,
+      }),
+    })
+      .then((response) => {
+        console.log(response);
+
+        return response;
+      });
   }
 
   render() {
@@ -28,9 +33,5 @@ class Form extends React.Component {
     );
   }
 }
-
-Form.propTypes = {
-  updateUsuario: propTypes.func.isRequired,
-};
 
 export default Form;

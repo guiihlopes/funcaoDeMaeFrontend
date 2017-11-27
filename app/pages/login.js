@@ -16,7 +16,7 @@ const LoginPage = () => (
         <Link href="/">
           <Logo />
         </Link>
-        <h5 className="text-muted m-t-0 font-600">Monitore seus gastos de água no chuveiro</h5>
+        <h5 className="text-muted m-t-0 font-600">Monitore seus gastos de eletricidade no chuveiro</h5>
       </div>
       <div className="m-t-40 card-box">
         <div className="text-center">

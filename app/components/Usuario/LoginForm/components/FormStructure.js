@@ -16,12 +16,14 @@ const UserUpdateForm = ({ handleSubmit, pristine, reset, submitting }) =>
       <Field
         name="usuario[senha]"
         placeholder="Senha"
+        type="password"
         component={ControlGroup}
         id="usuario_senha"
       />
       <FormFooter
         pristine={pristine}
         reset={reset}
+        submitButtonValue="Entrar"
         submitButtonClassName="btn btn-custom btn-bordred btn-block waves-effect waves-light"
         cancel={false}
         submitting={submitting}

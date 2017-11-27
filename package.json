@@ -1,7 +1,7 @@
 {
-  "name": "candido",
-  "version": "0.1.0-qa.1",
-  "description": "",
+  "name": "funcao-de-mae",
+  "version": "0.1",
+  "description": "FATEC Final paper",
   "main": "pages/index.js",
   "scripts": {
     "test": "jest",
